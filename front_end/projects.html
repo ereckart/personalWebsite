@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Projects</title>
 	<style> 
 		*{
@@ -10,16 +11,18 @@
 		#nav {
 			display: inline-block;
 			width: 100vw;
-			height: 50px;
-			line-height: 50px;
+			height: 70px;
+			line-height: 65px;
 			font-size: 22px;
-			background-color: #708090;
+			background-color: #414141;
+			font-family: Helvetica, Arial, sans-serif;
 		}
 		#nav a {
 			display: inline-block;
 			padding: 0px 14px;
-			font-size: 18px;
+			font-size: 15px;
 			line-height: 50px;
+			width: 100px;
 			color: white;
 			cursor: pointer;
 			text-decoration: none;
@@ -27,25 +30,106 @@
 		.projects {
 			display: inline-block;
 			width: 100vw;
-			border-bottom: 1px solid #708090;
+			border-bottom: 1px solid #414141;
 		} 
 		.thumbnail {
 			display: inline-block; 
 			margin: 20px;
-			width: calc(50vw - 40px);
-			height: calc(30vw - 40px);
+			width: calc(50vw - 42px);
+			height: calc(30vw - 42px);
+			float: left;
+		}
+		.thumbnail:hover {
+			cursor: pointer;
+		}
+		.modal {
+			z-index: 999;
+			position: fixed;
+			width: calc(100vw - 80px);
+			height: calc(100vh - 80px);
+			background-color: white;
+			top: 40px;
+			left: 40px; 
+			display: none;
+		}
+		.modal_background {
+			z-index: 998;
+			background-color: rgba(0, 0, 0, 0.5);
+			top: 0px;
+			left: 0px;
+			width: 100vw;
+			height: 100vh;
+			display: none;
+			cursor: pointer;
 		}
 		#creep_thumb {
 			background-color: black; 
 			background-image: url('creepThumbnail.jpg');
 			background-size: cover;
-			background-position: 50%;
+			background-position: 80% 50%;
+		}
+		#imaginations_thumb {
+			background-color: black; 
+			background-image: url('imaginations.png');
+			background-size: cover;
+			background-position: 80% 50%;
+		}
+		#rotoscope_thumb {
+			background-color: black; 
+			background-image: url('roto.png');
+			background-size: cover;
+			background-position: 80% 50%;
+		}
+		#database_thumb {
+			background-color: black; 
+			background-image: url('database.png');
+			background-size: cover;
+			background-position: 80% 50%;
+		}
+		#impact_thumb {
+			background-color: black; 
+			background-image: url('impactSeries.jpg');
+			background-size: cover;
+			background-position: 80% 50%;
+		}
+		#other_thumb {
+			background-color: black; 
+			background-image: url('other.png');
+			background-size: cover;
+			background-position: 80% 50%;
+		}
+		.blurb {
+			display: inline-block; 
+			margin: 20px;
+			width: calc(50vw - 42px);
+			height: calc(30vw - 42px);
+			float: right;
+			font-family: Helvetica, Arial, sans-serif;
+			color: #414141;
+		}
+		.blurb p {
+			margin-top: 10px;
 		}
 	</style>
-	<script></script>
+	<script>
+		function load_modal(name) {
+			document.getElementById('modal_background').style.display = "inline-block";
+			document.getElementById('modal_' + name).style.display = "inline-block";
+		}
+		function closed_modal() {
+			document.getElementById('modal_background').style.display = "none";
+			document.getElementById('modal_creep').style.display = "none";
+			document.getElementById('modal_imaginations').style.display = "none";
+			document.getElementById('modal_rotoscope').style.display = "none";
+			document.getElementById('modal_database').style.display = "none";
+			document.getElementById('modal_impact').style.display = "none";
+			document.getElementById('modal_other').style.display = "none";
+		}
+	</script>
 </head>
 
 <body>
+	<div class="modal_background" id="modal_background" onclick="closed_modal()"></div>
 	<div id="nav">
 		<center>
 			<a>Home</a>
@@ -54,18 +138,74 @@
 			<a>Contact Me</a>
 		</center>
 	</div>
+	<div class="modal" id="modal_imaginations">
+		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
+	</div>
 	<div class="projects">
-		<div class="thumbnail" id="creep_thumb">
-		
+		<div class="thumbnail" id="imaginations_thumb" onclick="load_modal('imaginations');"></div>
+		<div class="blurb">
+			<h2>Imaginations Finalist</h2>
+			<p>My Role: </p>
+			<p>Articles: </p>
+			<p>Prompt: Choose an actual abandoned or “ghost town” from anywhere in the world and re-vitalize it! It might be as a working town, a historical landmark, a living museum, a themed experience, or whatever else you can dream up. Consider historical value and respect for the traditions and communities of the original and surrounding areas. You can integrate the entire town, or carefully selected sections that best serve your idea and the location. Be mindful of any environmental impact that your proposal may have. What technological advancements will be necessary to not only develop your idea, but to engage guests to your new creation both in person, and before, during and after a visit? How will your idea appeal to families? In what ways will it be accessible to as diverse an audience as possible? Is there a social service component to your creation that will be of value to the local community or beyond? Please do not use Disney IP (Intellectual Property) in any part of your proposal.*</p>
 		</div>
 	</div>
-	<div class="projects"></div>
-	<div class="projects"></div>
-	<div class="projects"></div>
-	<div class="projects"></div>
-	<div class="projects"></div>
-	<div class="projects"></div>
-	<div class="projects"></div>
+	<div class="modal" id="modal_creep">
+		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
+	</div>
+	<div class="projects">
+		<div class="thumbnail" id="creep_thumb" onclick="load_modal('creep');">
+		</div>
+		<div class="blurb">
+			<h2>Creep</h2>
+			<p>Dancer</p>
+			<p><a href="http://www.casa.org/ava2017n">Nominations</a></p>
+			<p><a href="http://www.casa.org/ava2017w">Winners</a></p>
+		</div>
+	</div>
+	<div class="modal" id="modal_rotoscope">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<div class="projects">
+		<div class="thumbnail" id="rotoscope_thumb" onclick="load_modal('rotoscope');">
+		</div>
+		<div class="blurb">
+			<h2>Rotoscope</h2>
+			<p>Personal Side Project</p>
+		</div>
+	</div>
+	<div class="modal" id="modal_database">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<div class="projects">
+		<div class="thumbnail" id="database_thumb" onclick="load_modal('database');">
+		</div>
+		<div class="blurb">
+			<h2>Movie Stats Database</h2>
+			<p>Team Project -- Backend</p>
+		</div>
+	</div>
+	<div class="modal" id="modal_impact">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<div class="projects">
+		<div class="thumbnail" id="impact_thumb" onclick="load_modal('impact');">
+		</div>
+		<div class="blurb">
+			<h2>Impact Series</h2>
+			<p>Dancer, Editor</p>
+		</div>
+	</div>
+	<div class="modal" id="modal_other">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	</div>
+	<div class="projects">
+		<div class="thumbnail" id="other_thumb" onclick="load_modal('other');">
+		</div>
+		<div class="blurb">
+			<h2>Other Projects</h2>
+		</div>
+	</div>
 </body>
 
 </html>
