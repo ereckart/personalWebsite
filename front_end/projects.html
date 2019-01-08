@@ -156,14 +156,26 @@
 			margin: 10px;
 			cursor: pointer;
 			text-align: center;
-      position: relative;
-      top: 0px;
-      right: 0px;
-	    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
-      cursor: pointer;
-      transition: all ease-in-out 300ms;
-      font-family: "Comic Sans MS", cursive, sans-serif;
+      		position: relative;
+      		top: 0px;
+      		right: 0px;
+	    	box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+      		cursor: pointer;
+      		transition: all ease-in-out 300ms;
+      		font-family: Helvetica, Arial, sans-serif;
 		}
+	.modal_header h2 {
+		font-family: Helvetica, Arial, sans-serif;
+		color: #414141;
+		float: left;
+		margin-top: 16px;
+		margin-left: 0px;
+	}
+	.modal_header p {
+		font-family: Helvetica, Arial, sans-serif;
+		color: #414141;
+		font-size: 13px;
+	}
     .modal_x:hover {
       box-shadow: 0 2px 4px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
        transform: translate(0px, -2px);
@@ -275,10 +287,11 @@
 	<div class="modal" id="modal_imaginations">
     <center>
     <div class="modal_header">
-		    <span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
         <h2>Kessler Project</h2>
-		        <hr style="clear: both; visibility: hidden;">
-		        <p>Prompt: Choose an actual abandoned or “ghost town” from anywhere in the world and re-vitalize it! It might be as a working town, a historical landmark, a living museum, a themed experience, or whatever else you can dream up. Consider historical value and respect for the traditions and communities of the original and surrounding areas. You can integrate the entire town, or carefully selected sections that best serve your idea and the location. Be mindful of any environmental impact that your proposal may have. What technological advancements will be necessary to not only develop your idea, but to engage guests to your new creation both in person, and before, during and after a visit? How will your idea appeal to families? In what ways will it be accessible to as diverse an audience as possible? Is there a social service component to your creation that will be of value to the local community or beyond? Please do not use Disney IP (Intellectual Property) in any part of your proposal.</p>
+		<hr style="clear: both; visibility: hidden;">
+		<p>Prompt: Choose an actual abandoned or “ghost town” from anywhere in the world and re-vitalize it! It might be as a working town, a historical landmark, a living museum, a themed experience, or whatever else you can dream up. Consider historical value and respect for the traditions and communities of the original and surrounding areas. You can integrate the entire town, or carefully selected sections that best serve your idea and the location. Be mindful of any environmental impact that your proposal may have. What technological advancements will be necessary to not only develop your idea, but to engage guests to your new creation both in person, and before, during and after a visit? How will your idea appeal to families? In what ways will it be accessible to as diverse an audience as possible? Is there a social service component to your creation that will be of value to the local community or beyond? Please do not use Disney IP (Intellectual Property) in any part of your proposal.</p>
+		<br>
     </div>
 			<hr style="clear: both; visibility: hidden;">
 			<image src="slide1.jpg" width="100%" style="max-width: 800px;">
