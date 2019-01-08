@@ -3,13 +3,13 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Projects</title>
-	<style> 
+	<style>
 		* {
-			margin: 0px; 
+			margin: 0px;
 			padding: 0px;
-		} 
+		}
 		html {
-			overflow-x: hidden; 
+			overflow-x: hidden;
 		}
 		#nav {
 			display: inline-block;
@@ -36,15 +36,16 @@
 			max-width: 950px;
 			border-bottom: 1px solid #414141;
 			height: auto;
-			transition: all 1s ease-in;
-			overflow-y: hidden; 
-		} 
+      max-height: 280px;
+			transition: all 0.5s linear;
+			overflow-y: hidden;
+		}
 		.projects:hover {
 			cursor: pointer;
-			opacity: 0.9;
+			opacity: 0.7;
 		}
 		.thumbnail {
-			display: inline-block; 
+			display: inline-block;
 			margin: 20px;
 			width: calc(50vw - 42px);
 			height: calc(30vw - 42px);
@@ -58,13 +59,13 @@
 		.modal {
 			z-index: 999;
 			width: calc(100vw - 40px);
-			padding: 0px;
+			padding: 0px 20px;
 			background-color: white;
 			/*border-bottom: 1px solid black;*/
 			max-width: 910px;
-			height: 0;
-			transition: all 1s ease-in;
-			overflow-y: hidden; 
+      max-height: 0;
+			transition: all 0.5s linear;
+			overflow-y: hidden;
 		}
 		.modal_background {
 			z-index: 998;
@@ -77,49 +78,49 @@
 			cursor: pointer;
 		}
 		#creep_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('creepThumbnail.jpg');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#imaginations_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('kessler.jpg');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#rotoscope_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('roto.png');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#os_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('database.png');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#database_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('database.png');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#impact_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('impactSeries.jpg');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		#other_thumb {
-			background-color: black; 
+			background-color: black;
 			background-image: url('other.png');
 			background-size: cover;
 			background-position: 80% 50%;
 		}
 		.blurb {
-			display: inline-block; 
+			display: inline-block;
 			margin: 20px;
 			width: calc(50vw - 42px);
 			height: calc(30vw - 42px);
@@ -135,11 +136,11 @@
 				width: calc(100vw - 42px);
 				height: calc(60vw - 42px);
 			}
-		}	
+		}
 		.blurb p {
 			margin-top: 10px;
 		}
-		
+
 		.modal_x {
 			display: inline-block;
 			width: 30px;
@@ -157,40 +158,45 @@
 			.projects, .modal {
 				margin-left: calc(50vw - 476px);
 			}
-		}	
+		}
 	</style>
 	<script>
 		function closed_modal() {
 			//document.getElementById('modal_background').style.display = "none";
-			document.getElementById('modal_creep').style.padding = "0";
-			document.getElementById('modal_creep').style.height = "0";
-			document.getElementById('modal_imaginations').style.padding = "0";
-			document.getElementById('modal_imaginations').style.height = "0";
-			document.getElementById('modal_rotoscope').style.padding = "0";
-			document.getElementById('modal_rotoscope').style.height = "0";
-			document.getElementById('modal_database').style.padding = "0";
-			document.getElementById('modal_database').style.height = "0";
-			document.getElementById('modal_impact').style.padding = "0";
-			document.getElementById('modal_impact').style.height = "0";
-			document.getElementById('modal_other').style.padding = "0";
-			document.getElementById('modal_other').style.height = "0";
-			document.getElementById('modal_os').style.padding = "0";
-			document.getElementById('modal_os').style.height = "0";
+			document.getElementById('modal_creep').style.padding = "0px 20px";
+			document.getElementById('modal_creep').style.maxHeight = "0";
+			document.getElementById('modal_imaginations').style.padding = "0px 20px";
+			document.getElementById('modal_imaginations').style.maxHeight = "0";
+			document.getElementById('modal_rotoscope').style.padding = "0px 20px";
+			document.getElementById('modal_rotoscope').style.maxHeight = "0";
+			document.getElementById('modal_database').style.padding = "0px 20px";
+			document.getElementById('modal_database').style.maxHeight = "0";
+			document.getElementById('modal_impact').style.padding = "0px 20px";
+			document.getElementById('modal_impact').style.maxHeight = "0";
+			document.getElementById('modal_other').style.padding = "0px 20px";
+			document.getElementById('modal_other').style.maxHeight = "0";
+			document.getElementById('modal_os').style.padding = "0px 20px";
+			document.getElementById('modal_os').style.maxHeight = "0";
 
-			document.getElementById('creep_wrap').style.height = "auto";
-			document.getElementById('imaginations_wrap').style.height = "auto";
-			document.getElementById('rotoscope_wrap').style.height = "auto";
-			document.getElementById('database_wrap').style.height = "auto";
-			document.getElementById('impact_wrap').style.height = "auto";
-			document.getElementById('other_wrap').style.height = "auto";
-			document.getElementById('os_wrap').style.height = "auto";
+			document.getElementById('creep_wrap').style.maxHeight = "280px";
+			document.getElementById('imaginations_wrap').style.maxHeight = "280px";
+			document.getElementById('rotoscope_wrap').style.maxHeight = "280px";
+			document.getElementById('database_wrap').style.maxHeight = "280px";
+			document.getElementById('impact_wrap').style.maxHeight = "280px";
+			document.getElementById('other_wrap').style.maxHeight = "280px";
+			document.getElementById('os_wrap').style.maxHeight = "280px";
 		}
 		function load_modal(name) {
-			//document.getElementById('modal_background').style.display = "inline-block";
 			closed_modal();
-			document.getElementById('modal_' + name).style.padding = "20px";
-			document.getElementById('modal_' + name).style.height = "auto";
-			document.getElementById(name + '_wrap').style.height = "0";
+			document.getElementById('modal_' + name).style.padding = "20px 20px";
+			document.getElementById('modal_' + name).style.maxHeight = "1000px";
+      if (name == 'imaginations') {
+        console.log('bang');
+			    document.getElementById('modal_' + name).style.transition = "all 3s linear";
+			    document.getElementById('modal_' + name).style.maxHeight = "4600px";
+  			  document.getElementById('modal_' + name).style.transition = "all 1s linear";
+      }
+			document.getElementById(name+'_wrap').style.maxHeight = "0px";
 		}
 	</script>
 </head>
@@ -205,8 +211,8 @@
 			<a>Contact Me</a>
 		</center>
 	</div>
-	<div class="projects" id="imaginations_wrap">
-		<div class="thumbnail" id="imaginations_thumb" onclick="load_modal('imaginations');"></div>
+	<div class="projects" id="imaginations_wrap" onclick="load_modal('imaginations');">
+		<div class="thumbnail" id="imaginations_thumb"></div>
 		<div class="blurb">
 			<h2>Kessler Project</h2>
 			<p>My Role: </p>
@@ -228,8 +234,8 @@
 			<image src="slide8.jpg" width="100%" style="max-width: 800px;">
 		</center>
 	</div>
-	<div class="projects" id="os_wrap">
-		<div class="thumbnail" id="os_thumb" onclick="load_modal('os');">
+	<div class="projects" id="os_wrap" onclick="load_modal('os');">
+		<div class="thumbnail" id="os_thumb">
 		</div>
 		<div class="blurb">
 			<h2>CIS 380: Computer Operating Systems</h2>
@@ -239,8 +245,8 @@
 	<div class="modal" id="modal_os">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects" id="database_wrap">
-		<div class="thumbnail" id="database_thumb" onclick="load_modal('database');">
+	<div class="projects" id="database_wrap" onclick="load_modal('database');">
+		<div class="thumbnail" id="database_thumb">
 		</div>
 		<div class="blurb">
 			<h2>CIS 450: Database and Information Systems</h2>
@@ -250,8 +256,8 @@
 	<div class="modal" id="modal_database">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects" id="creep_wrap">
-		<div class="thumbnail" id="creep_thumb" onclick="load_modal('creep');">
+	<div class="projects" id="creep_wrap" onclick="load_modal('creep');">
+		<div class="thumbnail" id="creep_thumb">
 		</div>
 		<div class="blurb">
 			<h2>Creep</h2>
@@ -261,10 +267,9 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_creep">
-		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
 	</div>
-	<div class="projects" id="impact_wrap">
-		<div class="thumbnail" id="impact_thumb" onclick="load_modal('impact');">
+	<div class="projects" id="impact_wrap" onclick="load_modal('impact');">
+		<div class="thumbnail" id="impact_thumb">
 		</div>
 		<div class="blurb">
 			<h2>The Impact Series</h2>
@@ -274,8 +279,8 @@
 	<div class="modal" id="modal_impact">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects" id="rotoscope_wrap">
-		<div class="thumbnail" id="rotoscope_thumb" onclick="load_modal('rotoscope');">
+	<div class="projects" id="rotoscope_wrap" onclick="load_modal('rotoscope');">
+		<div class="thumbnail" id="rotoscope_thumb">
 		</div>
 		<div class="blurb">
 			<h2>Rotoscope</h2>
@@ -285,8 +290,8 @@
 	<div class="modal" id="modal_rotoscope">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects" id="other_wrap">
-		<div class="thumbnail" id="other_thumb" onclick="load_modal('other');">
+	<div class="projects" id="other_wrap" onclick="load_modal('other');">
+		<div class="thumbnail" id="other_thumb">
 		</div>
 		<div class="blurb">
 			<h2>Other Projects</h2>
