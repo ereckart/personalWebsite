@@ -37,7 +37,7 @@
 			border-bottom: 1px solid #414141;
 			height: auto;
       max-height: 280px;
-			transition: all 0.5s linear;
+			transition: all 0s linear;
 			overflow-y: hidden;
 		}
 		.projects:hover {
@@ -64,7 +64,7 @@
 			/*border-bottom: 1px solid black;*/
 			max-width: 910px;
       max-height: 0;
-			transition: all 0.5s linear;
+			transition: all 0s linear;
 			overflow-y: hidden;
 		}
 		.modal_background {
@@ -141,27 +141,48 @@
 			margin-top: 10px;
 		}
 
-		.modal_x {
+		.modal_x, .modal_x_floating {
 			display: inline-block;
-			width: 30px;
-			height: 30px;
-			line-height: 30px;
-			font-size: 24px;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 30px;
 			background-color: white;
-			border-radius: 15px;
+			border-radius: 40px;
 			float: right;
 			margin: 10px;
 			cursor: pointer;
 			text-align: center;
+      position: relative;
+      top: 0px;
+      right: 0px;
+	    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+      cursor: pointer;
+      transition: all ease-in-out 300ms;
+      font-family: "Comic Sans MS", cursive, sans-serif;
 		}
+    .modal_x:hover {
+    box-shadow: 0 2px 4px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+       transform: translate(0px, -2px);
+    }
 		@media only screen and (min-width: 950px) {
 			.projects, .modal {
 				margin-left: calc(50vw - 476px);
 			}
+  		#floating_X {
+  			right: calc(50vw - 461px);
+  		}
 		}
+    #floating_X {
+      position: fixed;
+      top: -50px;
+      right: 0px;
+    }
 	</style>
 	<script>
+    var active_modal = "";
 		function closed_modal() {
+      active_modal = ""
 			//document.getElementById('modal_background').style.display = "none";
 			document.getElementById('modal_creep').style.padding = "0px 20px";
 			document.getElementById('modal_creep').style.maxHeight = "0";
@@ -188,21 +209,43 @@
 		}
 		function load_modal(name) {
 			closed_modal();
+      active_modal = name;
 			document.getElementById('modal_' + name).style.padding = "20px 20px";
 			document.getElementById('modal_' + name).style.maxHeight = "1000px";
       if (name == 'imaginations') {
-        console.log('bang');
-			    document.getElementById('modal_' + name).style.transition = "all 3s linear";
+			    document.getElementById('modal_' + name).style.transition = "all 0s linear";
 			    document.getElementById('modal_' + name).style.maxHeight = "4600px";
-  			  document.getElementById('modal_' + name).style.transition = "all 1s linear";
+  			  document.getElementById('modal_' + name).style.transition = "all 0s linear";
       }
 			document.getElementById(name+'_wrap').style.maxHeight = "0px";
 		}
+    function adjust_x_button() {
+      if (active_modal == "") return;
+      var scroll = document.getElementsByTagName('html')[0].scrollTop;
+      var bodyRect = document.body.getBoundingClientRect(),
+          elemRect = document.getElementById('modal_' + active_modal).getBoundingClientRect(),
+          offset   = elemRect.top - bodyRect.top,
+          offset_bottom   = elemRect.bottom - bodyRect.top;
+      if (offset - scroll < 0) {
+        document.getElementById('floating_X').style.top = "15px";
+      } else {
+        document.getElementById('floating_X').style.top = "-100px";
+      }
+      if (offset_bottom - scroll < 50) {
+        document.getElementById('floating_X').style.top = "-100px";
+        var temp = active_modal;
+        closed_modal();
+        // CODE TO SCROLL BACK UP TO OLD HEADER TITLE AFTER
+        //var top = document.getElementById(temp+'_wrap').offsetTop; //Getting Y of target element
+        //window.scrollTo(0, top);
+      }
+    }
 	</script>
 </head>
 
-<body>
+<body onscroll="adjust_x_button();">
 	<div class="modal_background" id="modal_background" onclick="closed_modal()"></div>
+	<span class="modal_x" onclick="closed_modal();" id="floating_X">X</span>
 	<div id="nav">
 		<center>
 			<a>Home</a>
@@ -211,6 +254,7 @@
 			<a>Contact Me</a>
 		</center>
 	</div>
+  <a id="imaginations"></a>
 	<div class="projects" id="imaginations_wrap" onclick="load_modal('imaginations');">
 		<div class="thumbnail" id="imaginations_thumb"></div>
 		<div class="blurb">
@@ -221,7 +265,7 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_imaginations">
-		<span class="modal_x" onclick="closed_modal();">X</span>
+		<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
 		<center>
 			<hr style="clear: both; visibility: hidden;">
 			<image src="slide1.jpg" width="100%" style="max-width: 800px;">
