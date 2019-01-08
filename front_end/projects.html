@@ -35,12 +35,14 @@
 			width: 100vw;
 			max-width: 950px;
 			border-bottom: 1px solid #414141;
+			height: auto;
+			transition: all 1s ease-in;
+			overflow-y: hidden; 
 		} 
-		@media only screen and (min-width: 950px) {
-			.projects {
-				margin-left: calc(50vw - 476px);
-			}
-		}	
+		.projects:hover {
+			cursor: pointer;
+			opacity: 0.9;
+		}
 		.thumbnail {
 			display: inline-block; 
 			margin: 20px;
@@ -55,13 +57,14 @@
 		}
 		.modal {
 			z-index: 999;
-			position: fixed;
-			width: calc(100vw - 80px);
-			height: calc(100vh - 80px);
+			width: calc(100vw - 40px);
+			padding: 0px;
 			background-color: white;
-			top: 40px;
-			left: 40px; 
-			display: none;
+			/*border-bottom: 1px solid black;*/
+			max-width: 910px;
+			height: 0;
+			transition: all 1s ease-in;
+			overflow-y: hidden; 
 		}
 		.modal_background {
 			z-index: 998;
@@ -136,21 +139,58 @@
 		.blurb p {
 			margin-top: 10px;
 		}
+		
+		.modal_x {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 24px;
+			background-color: white;
+			border-radius: 15px;
+			float: right;
+			margin: 10px;
+			cursor: pointer;
+			text-align: center;
+		}
+		@media only screen and (min-width: 950px) {
+			.projects, .modal {
+				margin-left: calc(50vw - 476px);
+			}
+		}	
 	</style>
 	<script>
-		function load_modal(name) {
-			document.getElementById('modal_background').style.display = "inline-block";
-			document.getElementById('modal_' + name).style.display = "inline-block";
-		}
 		function closed_modal() {
-			document.getElementById('modal_background').style.display = "none";
-			document.getElementById('modal_creep').style.display = "none";
-			document.getElementById('modal_imaginations').style.display = "none";
-			document.getElementById('modal_rotoscope').style.display = "none";
-			document.getElementById('modal_database').style.display = "none";
-			document.getElementById('modal_impact').style.display = "none";
-			document.getElementById('modal_other').style.display = "none";
-			document.getElementById('modal_os').style.display = "none";
+			//document.getElementById('modal_background').style.display = "none";
+			document.getElementById('modal_creep').style.padding = "0";
+			document.getElementById('modal_creep').style.height = "0";
+			document.getElementById('modal_imaginations').style.padding = "0";
+			document.getElementById('modal_imaginations').style.height = "0";
+			document.getElementById('modal_rotoscope').style.padding = "0";
+			document.getElementById('modal_rotoscope').style.height = "0";
+			document.getElementById('modal_database').style.padding = "0";
+			document.getElementById('modal_database').style.height = "0";
+			document.getElementById('modal_impact').style.padding = "0";
+			document.getElementById('modal_impact').style.height = "0";
+			document.getElementById('modal_other').style.padding = "0";
+			document.getElementById('modal_other').style.height = "0";
+			document.getElementById('modal_os').style.padding = "0";
+			document.getElementById('modal_os').style.height = "0";
+
+			document.getElementById('creep_wrap').style.height = "auto";
+			document.getElementById('imaginations_wrap').style.height = "auto";
+			document.getElementById('rotoscope_wrap').style.height = "auto";
+			document.getElementById('database_wrap').style.height = "auto";
+			document.getElementById('impact_wrap').style.height = "auto";
+			document.getElementById('other_wrap').style.height = "auto";
+			document.getElementById('os_wrap').style.height = "auto";
+		}
+		function load_modal(name) {
+			//document.getElementById('modal_background').style.display = "inline-block";
+			closed_modal();
+			document.getElementById('modal_' + name).style.padding = "20px";
+			document.getElementById('modal_' + name).style.height = "auto";
+			document.getElementById(name + '_wrap').style.height = "0";
 		}
 	</script>
 </head>
@@ -165,10 +205,7 @@
 			<a>Contact Me</a>
 		</center>
 	</div>
-	<div class="modal" id="modal_imaginations">
-		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
-	</div>
-	<div class="projects">
+	<div class="projects" id="imaginations_wrap">
 		<div class="thumbnail" id="imaginations_thumb" onclick="load_modal('imaginations');"></div>
 		<div class="blurb">
 			<h2>Kessler Project</h2>
@@ -177,10 +214,21 @@
 			<p></p>
 		</div>
 	</div>
-	<div class="modal" id="modal_os">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="modal" id="modal_imaginations">
+		<span class="modal_x" onclick="closed_modal();">X</span>
+		<center>
+			<hr style="clear: both; visibility: hidden;">
+			<image src="slide1.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide2.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide3.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide4.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide5.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide6.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide7.jpg" width="100%" style="max-width: 800px;">
+			<image src="slide8.jpg" width="100%" style="max-width: 800px;">
+		</center>
 	</div>
-	<div class="projects">
+	<div class="projects" id="os_wrap">
 		<div class="thumbnail" id="os_thumb" onclick="load_modal('os');">
 		</div>
 		<div class="blurb">
@@ -188,10 +236,10 @@
 			<p>Team Project</p>
 		</div>
 	</div>
-	<div class="modal" id="modal_database">
+	<div class="modal" id="modal_os">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects">
+	<div class="projects" id="database_wrap">
 		<div class="thumbnail" id="database_thumb" onclick="load_modal('database');">
 		</div>
 		<div class="blurb">
@@ -199,10 +247,10 @@
 			<p>Team Project</p>
 		</div>
 	</div>
-	<div class="modal" id="modal_creep">
-		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
+	<div class="modal" id="modal_database">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects">
+	<div class="projects" id="creep_wrap">
 		<div class="thumbnail" id="creep_thumb" onclick="load_modal('creep');">
 		</div>
 		<div class="blurb">
@@ -212,10 +260,10 @@
 			<p><a href="http://www.casa.org/ava2017w">Winners</a></p>
 		</div>
 	</div>
-	<div class="modal" id="modal_impact">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<div class="modal" id="modal_creep">
+		<iframe width="100%" height="100%" src="imaginations.pdf"></iframe>
 	</div>
-	<div class="projects">
+	<div class="projects" id="impact_wrap">
 		<div class="thumbnail" id="impact_thumb" onclick="load_modal('impact');">
 		</div>
 		<div class="blurb">
@@ -223,10 +271,10 @@
 			<p>Dancer, Editor</p>
 		</div>
 	</div>
-	<div class="modal" id="modal_rotoscope">
+	<div class="modal" id="modal_impact">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects">
+	<div class="projects" id="rotoscope_wrap">
 		<div class="thumbnail" id="rotoscope_thumb" onclick="load_modal('rotoscope');">
 		</div>
 		<div class="blurb">
@@ -234,16 +282,19 @@
 			<p>Personal Side Project</p>
 		</div>
 	</div>
-	<div class="modal" id="modal_other">
+	<div class="modal" id="modal_rotoscope">
 		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
-	<div class="projects">
+	<div class="projects" id="other_wrap">
 		<div class="thumbnail" id="other_thumb" onclick="load_modal('other');">
 		</div>
 		<div class="blurb">
 			<h2>Other Projects</h2>
 			<p>3D modeling, Drawing, Dance</p>
 		</div>
+	</div>
+	<div class="modal" id="modal_other">
+		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 	</div>
 </body>
 
