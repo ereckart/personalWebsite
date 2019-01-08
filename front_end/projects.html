@@ -36,7 +36,7 @@
 			max-width: 950px;
 			border-bottom: 1px solid #414141;
 			height: auto;
-      max-height: 280px;
+      		max-height: 280px;
 			transition: all 0s linear;
 			overflow-y: hidden;
 		}
@@ -60,10 +60,10 @@
 			z-index: 999;
 			width: calc(100vw - 40px);
 			padding: 0px 20px;
-			background-color: white;
+			background-image: linear-gradient(white, #EEEEEE);
 			/*border-bottom: 1px solid black;*/
 			max-width: 910px;
-      max-height: 0;
+      		max-height: 0;
 			transition: all 0s linear;
 			overflow-y: hidden;
 		}
@@ -235,7 +235,7 @@
 			document.getElementById('modal_' + name).style.maxHeight = "1000px";
       if (name == 'imaginations') {
 			    document.getElementById('modal_' + name).style.transition = "all 0s linear";
-			    document.getElementById('modal_' + name).style.maxHeight = "4600px";
+			    document.getElementById('modal_' + name).style.maxHeight = "6500px";
   			  document.getElementById('modal_' + name).style.transition = "all 0s linear";
       }
 			document.getElementById(name+'_wrap').style.maxHeight = "0px";
@@ -270,8 +270,8 @@
 		<center>
 			<a>Home</a>
 			<a>Projects</a>
-			<a>About Me</a>
-			<a>Contact Me</a>
+			<a>About</a>
+			<a>Contact</a>
 		</center>
 	</div>
   <a id="imaginations"></a>
@@ -279,18 +279,24 @@
 		<div class="thumbnail" id="imaginations_thumb"></div>
 		<div class="blurb">
 			<h2>Kessler Project</h2>
-			<p>My Role: </p>
-			<p>Articles: </p>
-			<p></p>
+			<p>Imaginations Design Competition</p>
+			<p>Collaborated with three other students to design, develop, and present a concept on a themed experience in Space.  Submitted to the 2018 Disney Imaginations Design Competition and chosen as one of six finalists.</p>
+			<p>My Role - character development, writing, 3D modeling using Maya, graphic design using Illustrator, presenting to Imagineering executives</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_imaginations">
     <center>
     <div class="modal_header">
 		<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
-        <h2>Kessler Project</h2>
+        <h2>Kessler Project*</h2>
 		<hr style="clear: both; visibility: hidden;">
 		<p>Prompt: Choose an actual abandoned or “ghost town” from anywhere in the world and re-vitalize it! It might be as a working town, a historical landmark, a living museum, a themed experience, or whatever else you can dream up. Consider historical value and respect for the traditions and communities of the original and surrounding areas. You can integrate the entire town, or carefully selected sections that best serve your idea and the location. Be mindful of any environmental impact that your proposal may have. What technological advancements will be necessary to not only develop your idea, but to engage guests to your new creation both in person, and before, during and after a visit? How will your idea appeal to families? In what ways will it be accessible to as diverse an audience as possible? Is there a social service component to your creation that will be of value to the local community or beyond? Please do not use Disney IP (Intellectual Property) in any part of your proposal.</p>
+		<br>
+		<p>Articles: &nbsp;&nbsp;
+			<a href="https://disneyimaginations.com/2018-imaginations-finalists/">Disney Imaginations</a> &nbsp;&nbsp;
+			<a href="https://www.thedp.com/article/2018/02/disney-imaginations-penn-upenn-engineering-space-upenn-philadelphia-student-kessler">The Daily Pennsylvania</a> &nbsp;&nbsp;
+			<a href="http://www.philly.com/philly/education/disney-college-contest-yields-careers-as-imagineers-20180119.html">The Philadelphia Inquirer</a> 
+		</p>
 		<br>
     </div>
 			<hr style="clear: both; visibility: hidden;">
@@ -302,14 +308,20 @@
 			<image src="slide6.jpg" width="100%" style="max-width: 800px;">
 			<image src="slide7.jpg" width="100%" style="max-width: 800px;">
 			<image src="slide8.jpg" width="100%" style="max-width: 800px;">
+			<div class="modal_header" style="text-align: center;">
+				<p>*The project was conceived by the University of Pennsylvania Team and created for the 2018 Walt Disney Imagineering’s Imaginations Design Competition. This project is the sole property of Walt Disney Imagineering and all rights to use these ideas are exclusive to Walt Disney Imagineering. The competition is a way for students and recent graduates to showcase their talents and for Walt Disney Imagineering to identify new talent.</p>
+				<p>All content ©2018 Walt Disney Corporation, Walt Disney Imagineering and the 2018 Disney Imaginations design competition.</p>
+			</div>
 		</center>
 	</div>
 	<div class="projects" id="os_wrap" onclick="load_modal('os');">
 		<div class="thumbnail" id="os_thumb">
 		</div>
 		<div class="blurb">
-			<h2>CIS 380: Computer Operating Systems</h2>
-			<p>Team Project</p>
+			<h2>Penn-OS</h2>
+			<p>CIS 380: Computer Operating Systems</p>
+			<p>Collaborated with three other students to create a Unix-based operating system using C.</p>  
+			<p>My Role - implementing the file system and the shell</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_os">
@@ -319,8 +331,10 @@
 		<div class="thumbnail" id="database_thumb">
 		</div>
 		<div class="blurb">
-			<h2>CIS 450: Database and Information Systems</h2>
-			<p>Team Project</p>
+			<h2>Movie Analytics Database</h2>
+			<p>CIS 450: Database and Information Systems</p>
+			<p>Collaborated with three other students to create a website allowing users to look up general information on films as well as fun statistics related to the film industry.  Drew real data from two main sources: StatCrunch and Kaggle.</p>
+			<p>My Role - designing and building the backend using MySQL, performance evaluation</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_database">
@@ -331,19 +345,23 @@
 		</div>
 		<div class="blurb">
 			<h2>Creep</h2>
-			<p>Dancer</p>
-			<p><a href="http://www.casa.org/ava2017n">Nominations</a></p>
-			<p><a href="http://www.casa.org/ava2017w">Winners</a></p>
+			<p>Arts House Dance Company</p>
+			<p>Music video collaboration between two student groups: Arts House Dance Company and Penn Counterparts.  Submitted to 2017 A Capella Video Awards.  Nominated for Best Pop/Rock Video and won Best Mixed Collegiate Video.</p>
+			<p>My Role - dancer</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_creep">
+		<p><a href="http://www.casa.org/ava2017n">Nominations</a></p>
+		<p><a href="http://www.casa.org/ava2017w">Winners</a></p>
 	</div>
 	<div class="projects" id="impact_wrap" onclick="load_modal('impact');">
 		<div class="thumbnail" id="impact_thumb">
 		</div>
 		<div class="blurb">
 			<h2>The Impact Series</h2>
-			<p>Dancer, Editor</p>
+			<p>Arts House Dance Company</p>
+			<p>Dance video series addressing current social issues.</p>
+			<p>My Role - dancer, editing using Premiere Pro</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_impact">
@@ -355,6 +373,8 @@
 		<div class="blurb">
 			<h2>Rotoscope</h2>
 			<p>Personal Side Project</p>
+			<p>A short clip of a rotoscoped dancer in pointe shoes.</p>
+			<p>My Role - filming, editing, and rotoscoping using Photoshop</p>
 		</div>
 	</div>
 	<div class="modal" id="modal_rotoscope">
