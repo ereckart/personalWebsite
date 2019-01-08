@@ -182,6 +182,7 @@
 	<script>
     var active_modal = "";
 		function closed_modal() {
+      var temp = active_modal;
       active_modal = ""
 			//document.getElementById('modal_background').style.display = "none";
 			document.getElementById('modal_creep').style.padding = "0px 20px";
@@ -206,6 +207,9 @@
 			document.getElementById('impact_wrap').style.maxHeight = "280px";
 			document.getElementById('other_wrap').style.maxHeight = "280px";
 			document.getElementById('os_wrap').style.maxHeight = "280px";
+      if (temp != "")
+        document.getElementById(temp+'_wrap').scrollIntoView();
+      document.getElementById('floating_X').style.top = "-100px";
 		}
 		function load_modal(name) {
 			closed_modal();
@@ -236,8 +240,7 @@
         var temp = active_modal;
         closed_modal();
         // CODE TO SCROLL BACK UP TO OLD HEADER TITLE AFTER
-        //var top = document.getElementById(temp+'_wrap').offsetTop; //Getting Y of target element
-        //window.scrollTo(0, top);
+        document.getElementById(temp+'_wrap').scrollIntoView();
       }
     }
 	</script>
