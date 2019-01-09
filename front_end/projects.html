@@ -139,16 +139,16 @@
 		.blurb p {
 			margin-top: 10px;
 		}
-	.project_divider {
-		border: solid 1px lightgrey;
-		max-width: 950px;
-		margin-bottom: 20px;
-		margin-top: 20px;
-	}
-    .modal_header {
-      max-width: 800px;
-      text-align: left;
-    }
+		.project_divider {
+			border: solid 1px lightgrey;
+			max-width: 950px;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+	    .modal_header {
+	      max-width: 800px;
+	      text-align: left;
+	    }
 		.modal_x, .modal_x_floating {
 			display: inline-block;
 			width: 40px;
@@ -169,36 +169,48 @@
       		transition: all ease-in-out 300ms;
       		font-family: Helvetica, Arial, sans-serif;
 		}
-	.modal_header h2 {
-		font-family: Helvetica, Arial, sans-serif;
-		color: #414141;
-		float: left;
-		margin-top: 16px;
-		margin-left: 0px;
-	}
-	.modal_header p {
-		font-family: Helvetica, Arial, sans-serif;
-		color: #414141;
-		font-size: 15px;
-	}
-    .modal_x:hover {
-      box-shadow: 0 2px 4px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
-       transform: translate(0px, -2px);
-    }
-    #floating_X {
-      position: fixed;
-      top: -50px;
-      right: 0px;
-    }
+		.modal_header h2 {
+			font-family: Helvetica, Arial, sans-serif;
+			color: #414141;
+			float: left;
+			margin-top: 16px;
+			margin-left: 0px;
+		}
+		.modal_header p {
+			font-family: Helvetica, Arial, sans-serif;
+			color: #414141;
+			font-size: 15px;
+		}
+	    .modal_x:hover {
+	     	box-shadow: 0 2px 4px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
+	    	transform: translate(0px, -2px);
+	    }
+	    #floating_X {
+	      position: fixed;
+	      top: -50px;
+	      right: 0px;
+	    }
+	    #roto_video {
+	    	max-width: 800px;
+	    	width: calc(100vw - 40px);
+	    	max-height: 408px;
+	    	height: calc(51vw - 20px);
+	    }
+	    .impact_video {
+	    	max-width: 800px;
+	    	width: calc(100vw - 40px);
+	    	max-height: 450px;
+	    	height: calc(56.25vw - 23px);
+	    }
 		@media only screen and (min-width: 950px) {
 			.projects, .modal, .project_divider {
 				margin-left: calc(50vw - 476px);
 			}
-    }
+	    }
 		@media only screen and (min-width: 800px) {
-  		#floating_X {
-  			right: calc(50vw - 411px);
-  		}
+	  		#floating_X {
+	  			right: calc(50vw - 411px);
+	  		}
 		}
 	</style>
 	<script>
@@ -237,7 +249,7 @@
 			closed_modal();
       active_modal = name;
 			document.getElementById('modal_' + name).style.padding = "20px 20px";
-			document.getElementById('modal_' + name).style.maxHeight = "1000px";
+			document.getElementById('modal_' + name).style.maxHeight = "3000px";
       if (name == 'imaginations') {
 			    document.getElementById('modal_' + name).style.transition = "all 0s linear";
 			    document.getElementById('modal_' + name).style.maxHeight = "6500px";
@@ -406,8 +418,27 @@
 		        <h2>The Impact Series</h2>
 				<hr style="clear: both; visibility: hidden;">
 				<br>
-				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		    </div>
+		    <div class="modal_header">
+				<p style="font-size: 20px;">Intro</p>
+				<p style="font-size: 17px; margin-top: 6px;"><i>Dancer</i></p>
+			</div>
+			<br>
+		    <iframe src="https://www.youtube-nocookie.com/embed/KN89vKpWHsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="impact_video"></iframe>
+			<br><br><br>
+			<div class="modal_header">
+				<p style="font-size: 20px;">Kleptomaniac</p>
+				<p style="font-size: 17px; margin-top: 6px;"><i>Co-Editor and Dancer</i></p>
+			</div>
+			<br>
+			<iframe src="https://www.youtube-nocookie.com/embed/e8oKSyqV_W4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="impact_video"></iframe>
+			<br><br><br>
+			<div class="modal_header">
+				<p style="font-size: 20px;">River</p>
+				<p style="font-size: 17px; margin-top: 6px;"><i>Dancer</i></p>
+			</div>
+			<br>
+			<iframe src="https://www.youtube-nocookie.com/embed/UcY_ja34q3s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="impact_video"></iframe>
     	</center>
 	</div>
 	<hr class="project_divider">
@@ -428,7 +459,7 @@
 		        <h2>Pointe Shoes</h2>
 				<hr style="clear: both; visibility: hidden;">
 				<br>
-				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+				<iframe id="roto_video" src="https://player.vimeo.com/video/253186402" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		    </div>
     	</center>
 	</div>
