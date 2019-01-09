@@ -34,7 +34,6 @@
 			display: inline-block;
 			width: 100vw;
 			max-width: 950px;
-			border-bottom: 1px solid #414141;
 			height: auto;
       		max-height: 280px;
 			transition: all 0s linear;
@@ -140,6 +139,12 @@
 		.blurb p {
 			margin-top: 10px;
 		}
+	.project_divider {
+		border: solid 1px lightgrey;
+		max-width: 950px;
+		margin-bottom: 20px;
+		margin-top: 20px;
+	}
     .modal_header {
       max-width: 800px;
       text-align: left;
@@ -174,7 +179,7 @@
 	.modal_header p {
 		font-family: Helvetica, Arial, sans-serif;
 		color: #414141;
-		font-size: 13px;
+		font-size: 15px;
 	}
     .modal_x:hover {
       box-shadow: 0 2px 4px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
@@ -186,7 +191,7 @@
       right: 0px;
     }
 		@media only screen and (min-width: 950px) {
-			.projects, .modal {
+			.projects, .modal, .project_divider {
 				margin-left: calc(50vw - 476px);
 			}
     }
@@ -314,6 +319,7 @@
 			</div>
 		</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="os_wrap" onclick="load_modal('os');">
 		<div class="thumbnail" id="os_thumb">
 		</div>
@@ -325,8 +331,18 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_os">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>Penn-OS</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<p>Repo must remain private due to class policies.  See <a href="https://github.com/ereckart">here</a> for other projects.</p>
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="database_wrap" onclick="load_modal('database');">
 		<div class="thumbnail" id="database_thumb">
 		</div>
@@ -338,8 +354,18 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_database">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>Movie Analytics Database</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<p><a href="https://github.com/ereckart/cis450FinalProj">Github</a></p>
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="creep_wrap" onclick="load_modal('creep');">
 		<div class="thumbnail" id="creep_thumb">
 		</div>
@@ -351,9 +377,18 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_creep">
-		<p><a href="http://www.casa.org/ava2017n">Nominations</a></p>
-		<p><a href="http://www.casa.org/ava2017w">Winners</a></p>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>Creep</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<p><a href="http://www.casa.org/ava2017n">Nominations</a> &nbsp;&nbsp; <a href="http://www.casa.org/ava2017w">Winners</a></p>
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="impact_wrap" onclick="load_modal('impact');">
 		<div class="thumbnail" id="impact_thumb">
 		</div>
@@ -365,8 +400,17 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_impact">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>The Impact Series</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="rotoscope_wrap" onclick="load_modal('rotoscope');">
 		<div class="thumbnail" id="rotoscope_thumb">
 		</div>
@@ -378,8 +422,17 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_rotoscope">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>Pointe Shoes</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
+	<hr class="project_divider">
 	<div class="projects" id="other_wrap" onclick="load_modal('other');">
 		<div class="thumbnail" id="other_thumb">
 		</div>
@@ -389,7 +442,15 @@
 		</div>
 	</div>
 	<div class="modal" id="modal_other">
-		<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<center>
+		    <div class="modal_header">
+				<span class="modal_x" onclick="closed_modal();" id="imaginations_X">X</span>
+		        <h2>Other Projects</h2>
+				<hr style="clear: both; visibility: hidden;">
+				<br>
+				<iframe src="https://player.vimeo.com/video/253186402" width="640" height="326" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		    </div>
+    	</center>
 	</div>
 </body>
 
