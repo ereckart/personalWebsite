@@ -64,6 +64,7 @@
       		max-height: 0;
 			transition: all 0s linear;
 			overflow-y: hidden;
+      max-width: 840px;
 		}
 		.modal_background {
 			z-index: 998;
@@ -207,14 +208,16 @@
 			}
 	  }
 
-  @media only screen and (min-width: 910px) {
-    padding: 0px calc(50vw - 455px);
-  }
-		@media only screen and (min-width: 800px) {
-	  		#floating_X {
-	  			right: calc(50vw - 411px);
-	  		}
-		}
+    @media only screen and (min-width: 840px) {
+      .modal {
+        padding: 20px calc(50vw - 420px);
+      }
+    }
+  		@media only screen and (min-width: 800px) {
+  	  		#floating_X {
+  	  			right: calc(50vw - 411px);
+  	  		}
+  		}
 	</style>
 	<script>
     var active_modal = "";
@@ -222,19 +225,26 @@
       var temp = active_modal;
       active_modal = ""
 			//document.getElementById('modal_background').style.display = "none";
-			document.getElementById('modal_creep').style.padding = "0px 20px";
+			document.getElementById('modal_creep').style.paddingTop = "0px";
+			document.getElementById('modal_creep').style.paddingBottom = "0px";
 			document.getElementById('modal_creep').style.maxHeight = "0";
-			document.getElementById('modal_imaginations').style.padding = "0px 20px";
+			document.getElementById('modal_imaginations').style.paddingTop = "0px";
+			document.getElementById('modal_imaginations').style.paddingBottom = "0px";
 			document.getElementById('modal_imaginations').style.maxHeight = "0";
-			document.getElementById('modal_rotoscope').style.padding = "0px 20px";
+			document.getElementById('modal_rotoscope').style.paddingTop = "0px";
+			document.getElementById('modal_rotoscope').style.paddingBottom = "0px";
 			document.getElementById('modal_rotoscope').style.maxHeight = "0";
-			document.getElementById('modal_database').style.padding = "0px 20px";
+			document.getElementById('modal_database').style.paddingTop = "0px";
+			document.getElementById('modal_database').style.paddingBottom = "0px";
 			document.getElementById('modal_database').style.maxHeight = "0";
-			document.getElementById('modal_impact').style.padding = "0px 20px";
+			document.getElementById('modal_impact').style.paddingTop = "0px";
+			document.getElementById('modal_impact').style.paddingBottom = "0px";
 			document.getElementById('modal_impact').style.maxHeight = "0";
-			document.getElementById('modal_other').style.padding = "0px 20px";
+			document.getElementById('modal_other').style.paddingTop = "0px";
+			document.getElementById('modal_other').style.paddingBottom = "0px";
 			document.getElementById('modal_other').style.maxHeight = "0";
-			document.getElementById('modal_os').style.padding = "0px 20px";
+			document.getElementById('modal_os').style.paddingTop = "0px";
+			document.getElementById('modal_os').style.paddingBottom = "0px";
 			document.getElementById('modal_os').style.maxHeight = "0";
 
 			document.getElementById('creep_wrap').style.maxHeight = "280px";
@@ -251,7 +261,8 @@
 		function load_modal(name) {
 			closed_modal();
       active_modal = name;
-			document.getElementById('modal_' + name).style.padding = "20px 20px";
+			document.getElementById('modal_' + name).style.paddingTop = "20px";
+			document.getElementById('modal_' + name).style.paddingBottom = "20px";
 			document.getElementById('modal_' + name).style.maxHeight = "5000px";
       if (name == 'imaginations') {
 			    document.getElementById('modal_' + name).style.transition = "all 0s linear";
