@@ -35,19 +35,60 @@
 			width: 100vw;
 			height: 100vh;
 			background-size: cover;
+      background-position: 75% 50%;
 		}
+    #main_name {
+			font-family: Helvetica, Arial, sans-serif;
+      color: white;
+      position: absolute;
+      top: calc(50vh - 80px);
+      left: 50px;
+    }
+    #main_name #liz_reckart {
+      font-size: 50px;
+      font-weight: 900px;
+    }
+    #main_name .link {
+      font-size: 18px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      color: white;
+    }
+		@media only screen and (max-width: 500px) {
+      #main_name {
+        top: calc(75vh - 50px);
+      }
+      #main_name #liz_reckart {
+        font-size: 30px;
+        font-weight: 800px;
+      }
+    }
+		@media only screen and (min-width: 900px) {
+      #main_name {
+      top: calc(40vh - 25px);
+      }
+      #main_name {
+        left: 10vw
+      }
+    }
 	</style>
 
 	<script>
-		
+
 	</script>
 </head>
 
 <body>
 	<div id="home_photo">
-		
 	</div>
-</body>	
+    <div id="main_name">
+      <span id="liz_reckart">LIZ RECKART</span><br>
+      <a class="link" href="projects">Projects</a>&nbsp;&nbsp;&nbsp;
+      <a class="link" href="contact">Contact</a>&nbsp;&nbsp;&nbsp;
+      <a class="link" href="resume.pdf" target="_blank">Resume</a>&nbsp;&nbsp;&nbsp;
+    </div>
+</body>
 
 
 </html>
