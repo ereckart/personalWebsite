@@ -20,7 +20,7 @@
 			background-color: #414141;
 			font-family: Helvetica, Arial, sans-serif;
 		}
-		#nav a {
+		#nav a.big {
 			display: inline-block;
 			padding: 0px 14px;
 			font-size: 15px;
@@ -30,12 +30,20 @@
 			cursor: pointer;
 			text-decoration: none;
 		}
+    #nav a.small, #menu_bars {
+      display: none;
+			padding: 5px 20px;
+			font-size: 15px;
+			line-height: 20px;
+			width: calc(100vw - 40px);
+			color: white;
+			cursor: pointer;
+			text-decoration: none;
+    }
 		.projects {
 			display: inline-block;
 			width: 100vw;
 			max-width: 950px;
-			height: auto;
-      		max-height: 280px;
 			transition: all 0s linear;
 			overflow-y: hidden;
 		}
@@ -48,9 +56,9 @@
 			margin: 20px;
 			width: calc(50vw - 42px);
 			height: calc(30vw - 42px);
-			float: left;
 			max-width: 420px;
 			max-height: 252px;
+      vertical-align: top;
 		}
 		.thumbnail:hover {
 			cursor: pointer;
@@ -122,19 +130,30 @@
 			display: inline-block;
 			margin: 20px;
 			width: calc(50vw - 42px);
-			height: calc(30vw - 42px);
-			float: right;
 			font-family: Helvetica, Arial, sans-serif;
 			color: #414141;
 			max-width: 420px;
-			max-height: 252px;
+      vertical-align: top;
 		}
-		@media only screen and (max-width: 450px) {
+		@media only screen and (max-width: 600px) {
 			.blurb, .thumbnail {
-				margin-left: calc(50vw - 476px);
 				width: calc(100vw - 42px);
 				height: calc(60vw - 42px);
+        float: none;
 			}
+      #nav a.big {
+  			padding: 5px 20px;
+  			font-size: 15px;
+  			line-height: 20px;
+  			width: calc(100vw - 40px);
+  			color: white;
+  			cursor: pointer;
+  			text-decoration: none;
+      }
+      #nav #menu_bars {
+        display: inline-block;
+        text-align: left;
+      }
 		}
 		.blurb p {
 			margin-top: 10px;
@@ -292,6 +311,16 @@
         document.getElementById(temp+'_wrap').scrollIntoView();
       }
     }
+    function toggle_mobile_nav() {
+      var e = document.getElementById('menu_bars');
+      if (e.innerHTML == "X") {
+        e.innerHTML = "Menu";
+        document.getElementById('nav').style.height = '70px';
+      } else {
+        e.innerHTML = "X";
+        document.getElementById('nav').style.height = 'auto';
+      }
+    }
 	</script>
 </head>
 
@@ -300,10 +329,11 @@
 	<span class="modal_x" onclick="closed_modal();" id="floating_X">X</span>
 	<div id="nav">
 		<center>
-			<a href="/">Home</a>
-			<a href="projects">Projects</a>
-			<a href="resume.pdf" target="_blank">Resume</a>
-			<a href="contact">Contact</a>
+      <a onclick="toggle_mobile_nav()" id="menu_bars">Menu</a>
+			<a href="/" class="big">Home</a>
+			<a href="projects" class="big">Projects</a>
+			<a href="resume.pdf" target="_blank" class="big">Resume</a>
+			<a href="contact" class="big">Contact</a>
 		</center>
 	</div>
   <a id="imaginations"></a>
