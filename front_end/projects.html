@@ -18,7 +18,7 @@
 			line-height: 65px;
 			font-size: 22px;
 			background-color: #414141;
-			font-family: Helvetica, Arial, sans-serif;
+			font-: Helvetica, Arial, sans-serif;
 		}
 		#nav a.big {
 			display: inline-block;
@@ -245,6 +245,17 @@
   	  			right: calc(50vw - 411px);
   	  		}
   		}
+      .cart_pic {
+        width: calc(50vw - 42px); max-width: 398px;
+      }
+      .dance_pic {
+        width: calc(33vw - 22px); max-width: 265px;
+      }
+    	@media only screen and (max-width: 600px) {
+    	 	.cart_pic, .dance_pic {
+    	 		width: calc(100vw - 40px);
+    	 	}
+    	}
 	</style>
 	<script>
     var active_modal = "";
@@ -555,10 +566,10 @@
 				<p style="font-size: 17px; margin-top: 6px;">Maya</p>
 			</div>
 			<br>
-		    <img src="cart1.png" style="width: calc(50vw - 22px); max-width: 398px; margin-right: 2px;">
-		    <img src="cart2.png" style="width: calc(50vw - 22px); max-width: 398px; margin-left: 2px;">
-		    <img src="cart3.png" style="width: calc(50vw - 22px); max-width: 398px; margin-right: 2px;">
-		    <img src="cart4.png" style="width: calc(50vw - 22px); max-width: 398px; margin-left: 2px;">
+		    <img src="cart1.png" class="cart_pic" style="margin-right: 2px;">
+		    <img src="cart2.png" class="cart_pic" style="margin-left: 2px;">
+		    <img src="cart3.png" class="cart_pic" style="margin-right: 2px;">
+		    <img src="cart4.png" class="cart_pic" style="margin-left: 2px;">
 		    <br><br><br>
 		    <div class="modal_header">
 				<p style="font-size: 20px;">Dancing in Binary, Student Project (2016)</p>
@@ -573,9 +584,9 @@
 				<p style="font-size: 17px; margin-top: 6px;">Trained in classical ballet for 15 years and have danced for 18 years.  Choreographed seven pieces and have performed in various locales including Carnegie Hall and China.  Current member of a student run dance company that produces two shows a year.  </p>
 			</div>
 			<br>
-			<img src="dance4.jpeg" style="width: calc(33vw - 12px); max-width: 265px;">
-		    <img src="dance1.jpg" style="width: calc(33vw - 12px); max-width: 265px;">
-		    <img src="dance2.jpg" style="width: calc(33vw - 12px); max-width: 265px;">
+			  <img src="dance4.jpeg" class="dance_pic">
+		    <img src="dance1.jpg" class="dance_pic">
+		    <img src="dance2.jpg" class="dance_pic">
     	</center>
 	</div>
 </body>
