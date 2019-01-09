@@ -61,7 +61,6 @@
 			padding: 0px 20px;
 			background-image: linear-gradient(white, #EEEEEE);
 			/*border-bottom: 1px solid black;*/
-			max-width: 910px;
       		max-height: 0;
 			transition: all 0s linear;
 			overflow-y: hidden;
@@ -203,10 +202,14 @@
 	    	height: calc(56.25vw - 23px);
 	    }
 		@media only screen and (min-width: 950px) {
-			.projects, .modal, .project_divider {
+			.projects, .project_divider {
 				margin-left: calc(50vw - 476px);
 			}
-	    }
+	  }
+
+  @media only screen and (min-width: 910px) {
+    padding: 0px calc(50vw - 455px);
+  }
 		@media only screen and (min-width: 800px) {
 	  		#floating_X {
 	  			right: calc(50vw - 411px);
@@ -312,7 +315,7 @@
 		<p>Articles: &nbsp;&nbsp;
 			<a href="https://disneyimaginations.com/2018-imaginations-finalists/">Disney Imaginations</a> &nbsp;&nbsp;
 			<a href="https://www.thedp.com/article/2018/02/disney-imaginations-penn-upenn-engineering-space-upenn-philadelphia-student-kessler">The Daily Pennsylvania</a> &nbsp;&nbsp;
-			<a href="http://www.philly.com/philly/education/disney-college-contest-yields-careers-as-imagineers-20180119.html">The Philadelphia Inquirer</a> 
+			<a href="http://www.philly.com/philly/education/disney-college-contest-yields-careers-as-imagineers-20180119.html">The Philadelphia Inquirer</a>
 		</p>
 		<br>
     </div>
@@ -338,7 +341,7 @@
 		<div class="blurb">
 			<h2>Penn-OS</h2>
 			<p>CIS 380: Computer Operating Systems</p>
-			<p>Collaborated with three other students to create a Unix-based operating system using C.</p>  
+			<p>Collaborated with three other students to create a Unix-based operating system using C.</p>
 			<p>My Role - implementing the file system and the shell</p>
 		</div>
 	</div>
