@@ -138,20 +138,24 @@
 		@media only screen and (max-width: 600px) {
 			.blurb, .thumbnail {
 				width: calc(100vw - 42px);
-				height: calc(60vw - 42px);
         float: none;
 			}
       #nav a.big {
   			padding: 5px 20px;
-  			font-size: 15px;
-  			line-height: 20px;
-  			width: calc(100vw - 40px);
+  			font-size: 14px;
+  			line-height: 70px;
+  			width: calc(25vw - 10px);
+        padding: 0px;
+        margin: 0px;
   			color: white;
   			cursor: pointer;
   			text-decoration: none;
+        float: left;
+        z-index: 0;
       }
       #nav #menu_bars {
-        display: inline-block;
+        font-size: 17px;
+        display: none;
         text-align: left;
       }
 		}
@@ -267,13 +271,13 @@
 			document.getElementById('modal_os').style.paddingBottom = "0px";
 			document.getElementById('modal_os').style.maxHeight = "0";
 
-			document.getElementById('creep_wrap').style.maxHeight = "280px";
-			document.getElementById('imaginations_wrap').style.maxHeight = "280px";
-			document.getElementById('rotoscope_wrap').style.maxHeight = "280px";
-			document.getElementById('database_wrap').style.maxHeight = "280px";
-			document.getElementById('impact_wrap').style.maxHeight = "280px";
-			document.getElementById('other_wrap').style.maxHeight = "280px";
-			document.getElementById('os_wrap').style.maxHeight = "280px";
+			document.getElementById('creep_wrap').style.maxHeight = "";
+			document.getElementById('imaginations_wrap').style.maxHeight = "";
+			document.getElementById('rotoscope_wrap').style.maxHeight = "";
+			document.getElementById('database_wrap').style.maxHeight = "";
+			document.getElementById('impact_wrap').style.maxHeight = "";
+			document.getElementById('other_wrap').style.maxHeight = "";
+			document.getElementById('os_wrap').style.maxHeight = "";
       if (temp != "")
         document.getElementById(temp+'_wrap').scrollIntoView();
       document.getElementById('floating_X').style.top = "-100px";
